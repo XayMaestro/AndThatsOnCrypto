@@ -7,7 +7,7 @@ The goal of this project is to provide a "no-nonsense" entry point for anyone cu
 
 ## 📂 Current Resources
 * **Introduction to Crypto**: A comprehensive one-pager covering everything a newcomer needs to know to get started safely.
-    * **Live Link:** `https://www.AndThatsOnCrypto.com/introduction/`
+    * **Live Link:** `http://www.AndThatsOnCrypto.com/introduction/`
 
 ## 🛠 Project Structure
 To keep things organized, each major topic is hosted in its own folder:
