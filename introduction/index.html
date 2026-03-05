@@ -41,14 +41,14 @@
             background: linear-gradient(90deg, #38bdf8, #818cf8);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            /* Ensures descenders like 'y' and 'p' aren't clipped */
-            padding-bottom: 0.15em;
+            /* Extra padding to ensure descenders like 'y' and 'p' are never clipped */
+            padding-bottom: 0.2em;
             display: inline-block;
         }
 
         /* Navigation Styling */
         nav {
-            background: rgba(15, 23, 42, 0.9);
+            background: rgba(15, 23, 42, 0.95);
             backdrop-filter: blur(12px);
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
@@ -150,7 +150,6 @@
         <div class="max-w-6xl mx-auto w-full px-4 flex items-center justify-between overflow-hidden">
             <!-- Logo Section -->
             <div class="flex items-center gap-2 flex-shrink-0">
-                <!-- Ensure your file is named logo.png in your GitHub root -->
                 <img src="/logo.png" alt="Logo" class="h-10 w-auto block" style="min-width: 40px;">
                 <span class="hidden sm:block font-bold text-xs md:text-sm tracking-tight uppercase text-white truncate max-w-[150px] lg:max-w-none">And That's On Crypto</span>
             </div>
@@ -161,8 +160,9 @@
                 <a href="#blockchain" class="nav-link text-slate-400 uppercase tracking-widest hover:text-white">Blockchain</a>
                 <a href="#charts" class="nav-link text-slate-400 uppercase tracking-widest hover:text-white">Charts</a>
                 <a href="#wallets" class="nav-link text-slate-400 uppercase tracking-widest hover:text-white">Wallets</a>
-                <a href="#taxes" class="nav-link text-slate-400 uppercase tracking-widest hover:text-white">Taxes</a>
-                <a href="#uphold" class="nav-link text-slate-400 uppercase tracking-widest hover:text-white">Join</a>
+                <a href="#compliance" class="nav-link text-slate-400 uppercase tracking-widest hover:text-white">Compliance</a>
+                <!-- Updated from Join to Get Started -->
+                <a href="#uphold" class="nav-link text-slate-400 uppercase tracking-widest hover:text-white">Get Started</a>
                 <a href="#influencers" class="nav-link text-slate-400 uppercase tracking-widest hover:text-white">Influencers</a>
             </div>
         </div>
@@ -170,8 +170,8 @@
 
     <div class="max-w-4xl mx-auto px-4 md:px-8 pt-24 pb-8">
         <!-- Header -->
-        <header id="intro" class="text-center mb-8 pt-10">
-            <h1 class="text-5xl md:text-6xl font-bold mb-6 gradient-text">Welcome to Crypto</h1>
+        <header id="intro" class="text-center mb-12 pt-10">
+            <h1 class="text-5xl md:text-6xl font-bold mb-8 gradient-text">Welcome to Crypto</h1>
             <p class="text-lg text-slate-400">A beginner's guide to utility-driven cryptocurrency and ISO 20022.</p>
         </header>
 
@@ -330,7 +330,7 @@
                             "Never overextend yourself by investing more than you are willing to lose."
                         </p>
                         <p class="text-xs text-slate-500 mt-4">
-                            In this space, you are your own bank. <strong>Your money, your responsibility.</strong> Approach every trade with a clear head and a plan (whether long or short term) including an exit strategy.
+                            In this space, you are your own bank. <strong>Your money, your responsibility.</strong> Approach every trade with a plan (whether long or short term) including an exit strategy.
                         </p>
                     </div>
                 </div>
@@ -394,10 +394,10 @@
             </div>
         </section>
 
-        <!-- Taxes & The IRS -->
-        <section id="taxes" class="mb-12">
+        <!-- Compliance & The IRS -->
+        <section id="compliance" class="mb-12">
             <h2 class="text-2xl font-bold mb-6 flex items-center">
-                <span class="mr-2">⚖️</span> Taxes & The IRS: Staying Compliant
+                <span class="mr-2">⚖️</span> Compliance & The IRS: Staying Safe
             </h2>
             <div class="card p-8 rounded-2xl border-red-500/10">
                 <p class="text-slate-300 leading-relaxed mb-6">
