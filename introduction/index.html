@@ -4,30 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="/favicon.ico">
-    <title>Welcome to Crypto | And Thats On Crypto</title>
+    <title>Welcome to Crypto | And That's On Crypto</title>
     <meta name="description" content="A beginner's guide to utility-driven cryptocurrency, ISO 20022 tokens, and the future of global payments.">
     <link rel="canonical" href="https://andthatsoncrypto.com/" />
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://andthatsoncrypto.com/">
-    <meta property="og:title" content="Welcome to Crypto | And Thats On Crypto">
+    <meta property="og:title" content="Welcome to Crypto | And That's On Crypto">
     <meta property="og:description" content="The foundational guide for understanding XRP, Ripple, and the shift to ISO 20022 compliant assets.">
 
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        
+        /* Smooth scrolling for anchor links */
+        html {
+            scroll-behavior: smooth;
+            /* Offset for fixed header */
+            scroll-padding-top: 80px; 
+        }
+
         body {
             font-family: 'Inter', sans-serif;
             background-color: #0f172a;
             color: #f1f5f9;
-            scroll-behavior: smooth;
         }
+
         .card {
             background: rgba(30, 41, 59, 0.7);
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
+
         .gradient-text {
             background: linear-gradient(90deg, #38bdf8, #818cf8);
             -webkit-background-clip: text;
@@ -36,32 +45,58 @@
             padding-bottom: 0.15em;
             display: inline-block;
         }
+
+        /* Navigation Styling */
+        nav {
+            background: rgba(15, 23, 42, 0.9);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-link {
+            transition: color 0.3s ease;
+            font-size: 0.8rem;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .nav-link:hover {
+            color: #38bdf8;
+        }
+
         .candle-green { background-color: #22c55e; }
         .candle-red { background-color: #ef4444; }
+        
         .disclaimer-box {
             background: rgba(239, 68, 68, 0.1);
             border: 1px solid rgba(239, 68, 68, 0.3);
         }
+
         .video-card {
             background: linear-gradient(145deg, rgba(30, 41, 59, 0.8), rgba(15, 23, 42, 0.9));
         }
+
         .token-link {
             transition: all 0.3s ease;
         }
+
         .token-link:hover {
             color: #38bdf8;
             transform: translateY(-2px);
         }
+
         .timeline-container {
             border-left: 2px solid #334155;
             margin-left: 1rem;
             padding-left: 2rem;
             position: relative;
         }
+
         .timeline-item {
             position: relative;
             margin-bottom: 2rem;
         }
+
         .timeline-dot {
             width: 14px;
             height: 14px;
@@ -73,12 +108,12 @@
             box-shadow: 0 0 10px rgba(56, 189, 248, 0.5);
             z-index: 10;
         }
+
         .uphold-green { color: #49cc68; }
         .uphold-bg { background-color: #49cc68; }
         .uphold-btn:hover { background-color: #3eb859; }
         .uphold-card { border-color: rgba(73, 204, 104, 0.3); }
         
-        /* Coinbase Branding */
         .coinbase-blue { color: #0052FF; }
         .coinbase-bg { background-color: #0052FF; }
         .coinbase-btn:hover { background-color: #0045d9; }
@@ -89,6 +124,7 @@
                               linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
             background-size: 20px 20px;
         }
+
         #backToTop {
             position: fixed;
             bottom: 20px;
@@ -96,13 +132,45 @@
             display: none;
             z-index: 100;
         }
+
+        /* Hide scrollbar for nav on mobile but keep functionality */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
     </style>
 </head>
-<body class="min-h-screen p-4 md:p-8">
-    <div class="max-w-4xl mx-auto">
+<body class="min-h-screen">
+
+    <!-- Static Navigation Menu -->
+    <nav class="fixed top-0 left-0 w-full z-50 h-16 flex items-center">
+        <div class="max-w-6xl mx-auto w-full px-4 flex items-center justify-between overflow-hidden">
+            <!-- Logo Section -->
+            <div class="flex items-center gap-2 flex-shrink-0">
+                <img src="logo.png" alt="Logo" class="h-8 w-auto" onerror="this.style.opacity='0'">
+                <span class="hidden sm:block font-bold text-xs md:text-sm tracking-tight uppercase text-white truncate max-w-[150px] lg:max-w-none">And That's On Crypto</span>
+            </div>
+
+            <!-- Navigation Links -->
+            <div class="flex items-center gap-4 md:gap-6 overflow-x-auto no-scrollbar py-2 ml-4">
+                <a href="#intro" class="nav-link text-slate-400 uppercase tracking-widest hover:text-white">Intro</a>
+                <a href="#blockchain" class="nav-link text-slate-400 uppercase tracking-widest hover:text-white">Blockchain</a>
+                <a href="#charts" class="nav-link text-slate-400 uppercase tracking-widest hover:text-white">Charts</a>
+                <a href="#wallets" class="nav-link text-slate-400 uppercase tracking-widest hover:text-white">Wallets</a>
+                <a href="#taxes" class="nav-link text-slate-400 uppercase tracking-widest hover:text-white">Taxes</a>
+                <a href="#uphold" class="nav-link text-slate-400 uppercase tracking-widest hover:text-white">Join</a>
+                <a href="#influencers" class="nav-link text-slate-400 uppercase tracking-widest hover:text-white">Influencers</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="max-w-4xl mx-auto px-4 md:px-8 pt-24 pb-8">
         <!-- Header -->
-        <header class="text-center mb-8 pt-10">
-            <h1 class="text-5xl md:text-6xl font-bold mb-4 gradient-text">Welcome to Crypto</h1>
+        <header id="intro" class="text-center mb-8 pt-10">
+            <h1 class="text-5xl md:text-6xl font-bold mb-6 gradient-text">Welcome to Crypto</h1>
             <p class="text-lg text-slate-400">A beginner's guide to utility-driven cryptocurrency and ISO 20022.</p>
         </header>
 
@@ -132,7 +200,7 @@
         </section>
 
         <!-- What is Blockchain? -->
-        <section class="mb-12">
+        <section id="blockchain" class="mb-12">
             <h2 class="text-2xl font-bold mb-6 flex items-center">
                 <span class="mr-2">⛓️</span> What is Blockchain Technology?
             </h2>
@@ -162,7 +230,7 @@
         </section>
 
         <!-- History Timeline -->
-        <section class="mb-12">
+        <section id="history" class="mb-12">
             <h2 class="text-2xl font-bold mb-8 flex items-center">
                 <span class="mr-2">⏳</span> The Evolution of Crypto & XRP
             </h2>
@@ -191,7 +259,7 @@
         </section>
 
         <!-- Candlestick Chart Lesson -->
-        <section class="mb-12">
+        <section id="charts" class="mb-12">
             <h2 class="text-2xl font-bold mb-6">Master the Candlestick Chart</h2>
             <p class="text-slate-300 mb-8 leading-relaxed">
                 Understanding how to read a candlestick chart is the single most important starting point for any new investor. I want to make sure everyone <span class="text-blue-400 font-semibold">begins here</span>, as it is the foundational skill required to recognize market indications, patterns, and long-term trends. These charts reveal the psychology of the market and provide far more actionable data than a simple line graph.
@@ -269,7 +337,7 @@
         </section>
 
         <!-- Wallets vs Exchanges -->
-        <section class="mb-12">
+        <section id="wallets" class="mb-12">
             <h2 class="text-2xl font-bold mb-6 flex items-center">
                 <span class="mr-2">🔐</span> Wallets, Exchanges & Storage
             </h2>
@@ -326,7 +394,7 @@
         </section>
 
         <!-- Taxes & The IRS -->
-        <section class="mb-12">
+        <section id="taxes" class="mb-12">
             <h2 class="text-2xl font-bold mb-6 flex items-center">
                 <span class="mr-2">⚖️</span> Taxes & The IRS: Staying Compliant
             </h2>
@@ -352,7 +420,7 @@
         </section>
 
         <!-- Uphold Section -->
-        <section class="card uphold-card rounded-2xl p-8 mb-6 text-center">
+        <section id="uphold" class="card uphold-card rounded-2xl p-8 mb-6 text-center">
             <div class="flex flex-col items-center">
                 <h2 class="text-2xl font-bold mb-4 uphold-green">Get started with Uphold</h2>
                 <p class="mb-6 text-slate-300 max-w-lg text-sm md:text-base">Start your journey with Uphold, a leading digital money platform that makes it easy to buy, hold, and trade assets like XRP, XLM, and HBAR.</p>
@@ -482,7 +550,7 @@
         </section>
 
         <!-- Influencers Section -->
-        <section class="mb-12">
+        <section id="influencers" class="mb-12">
             <h2 class="text-2xl font-bold mb-6 flex items-center">
                 <span class="mr-2">📚</span> Noteworthy Influencers
             </h2>
@@ -556,7 +624,7 @@
 
         <!-- Footer -->
         <footer class="text-center py-12 border-t border-slate-800">
-            <p class="text-slate-300 text-sm mb-2">Welcome to And Thats On Crypto. Remember to always do your due diligence before investing.</p>
+            <p class="text-slate-300 text-sm mb-2">Welcome to And That's On Crypto. Remember to always do your due diligence before investing.</p>
             <p class="text-xs text-slate-600 italic">Not Financial Advice.</p>
         </footer>
     </div>
