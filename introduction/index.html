@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="/favicon.ico">
+    <title>Welcome to Crypto | And That's On Crypto</title>
+    <meta name="description" content="A beginner's guide to utility-driven cryptocurrency, ISO 20022 tokens, and the future of global payments.">
+    <link rel="canonical" href="https://andthatsoncrypto.com/" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://andthatsoncrypto.com/">
+    <meta property="og:title" content="Welcome to Crypto | And That's On Crypto">
+    <meta property="og:description" content="The foundational guide for understanding XRP, Ripple, and the shift to ISO 20022 compliant assets.">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        
+        /* Smooth scrolling for anchor links */
+        html {
+            scroll-behavior: smooth;
+            /* Offset for fixed header */
+            scroll-padding-top: 80px; 
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f172a;
+            color: #f1f5f9;
+        }
+
+        .card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, #38bdf8, #818cf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            /* Extra padding to ensure descenders like 'y' and 'p' are never clipped */
+            padding-bottom: 0.2em;
+            display: inline-block;
+        }
+
+        /* Navigation Styling */
+        nav {
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-link {
+            transition: color 0.3s ease;
+            font-size: 0.8rem;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .nav-link:hover {
+            color: #38bdf8;
+        }
+
+        .candle-green { background-color: #22c55e; }
+        .candle-red { background-color: #ef4444; }
+        
+        .disclaimer-box {
+            background: rgba(239, 68, 68, 0.1);
+            border: 1px solid rgba(239, 68, 68, 0.3);
+        }
+
+        .video-card {
+            background: linear-gradient(145deg, rgba(30, 41, 59, 0.8), rgba(15, 23, 42, 0.9));
+        }
+
+        .token-link {
+            transition: all 0.3s ease;
+        }
+
+        .token-link:hover {
+            color: #38bdf8;
+            transform: translateY(-2px);
+        }
+
+        .timeline-container {
+            border-left: 2px solid #334155;
+            margin-left: 1rem;
+            padding-left: 2rem;
+            position: relative;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2rem;
+        }
+
+        .timeline-dot {
+            width: 14px;
+            height: 14px;
+            background: #38bdf8;
+            border-radius: 50%;
+            position: absolute;
+            left: calc(-2rem - 8px); 
+            top: 6px;
+            box-shadow: 0 0 10px rgba(56, 189, 248, 0.5);
+            z-index: 10;
+        }
+
+        .uphold-green { color: #49cc68; }
+        .uphold-bg { background-color: #49cc68; }
+        .uphold-btn:hover { background-color: #3eb859; }
+        .uphold-card { border-color: rgba(73, 204, 104, 0.3); }
+        
+        .coinbase-blue { color: #0052FF; }
+        .coinbase-bg { background-color: #0052FF; }
+        .coinbase-btn:hover { background-color: #0045d9; }
+        .coinbase-card { border-color: rgba(0, 82, 255, 0.3); }
+
+        .chart-grid {
+            background-image: linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+                              linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+
+        #backToTop {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: none;
+            z-index: 100;
+        }
+
+        /* Hide scrollbar for nav on mobile but keep functionality */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+
+    <!-- Static Navigation Menu -->
+    <nav class="fixed top-0 left-0 w-full z-50 h-16 flex items-center">
+        <div class="max-w-6xl mx-auto w-full px-4 flex items-center justify-between overflow-hidden">
+            <!-- Logo Section -->
+            <div class="flex items-center gap-2 flex-shrink-0">
+                <img src="/logo.png" alt="Logo" class="h-10 w-auto block" style="min-width: 40px;">
+                <span class="hidden sm:block font-bold text-xs md:text-sm tracking-tight uppercase text-white truncate max-w-[150px] lg:max-w-none">And That's On Crypto</span>
+            </div>
+
+            <!-- Navigation Links -->
+            <div class="flex items-center gap-4 md:gap-6 overflow-x-auto no-scrollbar py-2 ml-4">
+                <a href="#intro" class="nav-link text-slate-400 uppercase tracking-widest hover:text-white">Intro</a>
+                <a href="#blockchain" class="nav-link text-slate-400 uppercase tracking-widest hover:text-white">Blockchain</a>
+                <a href="#charts" class="nav-link text-slate-400 uppercase tracking-widest hover:text-white">Charts</a>
+                <a href="#wallets" class="nav-link text-slate-400 uppercase tracking-widest hover:text-white">Wallets</a>
+                <a href="#compliance" class="nav-link text-slate-400 uppercase tracking-widest hover:text-white">Compliance</a>
+                <a href="#uphold" class="nav-link text-slate-400 uppercase tracking-widest hover:text-white">Get Started</a>
+                <a href="#influencers" class="nav-link text-slate-400 uppercase tracking-widest hover:text-white">Influencers</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="max-w-4xl mx-auto px-4 md:px-8 pt-24 pb-8">
+        <!-- Header -->
+        <header id="intro" class="text-center mb-12 pt-10">
+            <h1 class="text-5xl md:text-6xl font-bold mb-8 gradient-text">Welcome to Crypto</h1>
+            <p class="text-lg text-slate-400">A beginner's guide to utility-driven cryptocurrency and ISO 20022.</p>
+        </header>
+
+        <!-- Financial Disclaimer -->
+        <section class="disclaimer-box rounded-xl p-4 mb-10 text-center">
+            <p class="text-red-400 text-sm font-semibold uppercase tracking-wider mb-1">⚠️ Important Disclaimer</p>
+            <p class="text-slate-300 text-sm">
+                I am <span class="text-white font-bold underline">not</span> a financial advisor. The information on this page is for educational purposes only. Cryptocurrency investing involves significant risk. Always do your own research before investing.
+            </p>
+        </section>
+
+        <!-- What is Cryptocurrency? -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold mb-6 flex items-center">
+                <span class="mr-2">🪙</span> What is Cryptocurrency?
+            </h2>
+            <div class="card p-8 rounded-2xl">
+                <p class="text-slate-300 leading-relaxed mb-4">
+                    Cryptocurrency is a form of digital or virtual currency that uses <strong>cryptography</strong> for security. Unlike the dollar or euro (fiat money), it is not issued by any central authority like a government or central bank.
+                </p>
+                <div class="space-y-4 text-sm text-slate-400">
+                    <p>• <strong class="text-white">Digital Only:</strong> It has no physical form like paper money or coins.</p>
+                    <p>• <strong class="text-white">24/7 Markets:</strong> Unlike the stock market, crypto never sleeps. You can trade anytime, anywhere.</p>
+                    <p>• <strong class="text-white">Utility & Value:</strong> Some cryptos act like digital gold, while others (like XRP) are tools used to move money across borders instantly.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- What is Blockchain? -->
+        <section id="blockchain" class="mb-12">
+            <h2 class="text-2xl font-bold mb-6 flex items-center">
+                <span class="mr-2">⛓️</span> What is Blockchain Technology?
+            </h2>
+            <div class="card p-8 rounded-2xl">
+                <p class="text-slate-300 leading-relaxed mb-6">
+                    A blockchain is a shared digital ledger. It records transactions across a network of computers, creating a record that cannot be changed once it is verified.
+                </p>
+
+                <div class="p-5 bg-blue-900/10 border-l-4 border-blue-500 rounded-r-lg mb-8">
+                    <h4 class="text-white font-bold mb-2">The Connection to Crypto</h4>
+                    <p class="text-sm text-slate-300 leading-relaxed">
+                        To understand their relationship, think of the <strong>Blockchain as the digital highway</strong> and <strong>Cryptocurrency as the vehicle</strong> that travels on it. The blockchain provides the secure infrastructure and rules, while the cryptocurrency is the asset being moved, tracked, and stored. Without blockchain, digital money couldn't exist because there would be no way to prove who owns what without a bank in the middle.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm">
+                    <div class="p-4 bg-slate-800/50 rounded-lg">
+                        <h4 class="text-blue-400 font-bold mb-2 uppercase tracking-wide">Decentralized</h4>
+                        <p class="text-slate-400">No single bank or government controls the network. Power is held by the participants.</p>
+                    </div>
+                    <div class="p-4 bg-slate-800/50 rounded-lg">
+                        <h4 class="text-blue-400 font-bold mb-2 uppercase tracking-wide">Immutable</h4>
+                        <p class="text-slate-400">Once data is written, it is permanent. This prevents fraud and ensures total transparency.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- History Timeline -->
+        <section id="history" class="mb-12">
+            <h2 class="text-2xl font-bold mb-8 flex items-center">
+                <span class="mr-2">⏳</span> The Evolution of Crypto & XRP
+            </h2>
+            <div class="timeline-container">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <h3 class="font-bold text-white text-lg">2008: Birth of Bitcoin</h3>
+                    <p class="text-sm text-slate-400 mt-1">Satoshi Nakamoto launches the first decentralized peer-to-peer cash system.</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <h3 class="font-bold text-white text-lg">2012: XRP Ledger Launch</h3>
+                    <p class="text-sm text-slate-400 mt-1">Designed by David Schwartz and others to solve banking settlement friction.</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <h3 class="font-bold text-white text-lg">2023: Legal Victory</h3>
+                    <p class="text-sm text-slate-400 mt-1">A New York court clarifies that XRP itself is not a security.</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <h3 class="font-bold text-white text-lg">2025: Strategic Reserve</h3>
+                    <p class="text-sm text-slate-400 mt-1">U.S. leadership acknowledges XRP's role in the new Crypto Strategic Reserve.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Candlestick Chart Lesson -->
+        <section id="charts" class="mb-12">
+            <h2 class="text-2xl font-bold mb-6">Master the Candlestick Chart</h2>
+            <p class="text-slate-300 mb-8 leading-relaxed">
+                Understanding how to read a candlestick chart is the single most important starting point for any new investor. I want to make sure everyone <span class="text-blue-400 font-semibold">begins here</span>, as it is the foundational skill required to recognize market indications, patterns, and long-term trends. These charts reveal the psychology of the market and provide far more actionable data than a simple line graph.
+            </p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mb-10 text-center">
+                <div class="card p-6 rounded-2xl border-green-500/20">
+                    <div class="w-1 h-8 bg-slate-500 mx-auto"></div>
+                    <div class="w-10 h-20 candle-green rounded-sm mx-auto flex items-center justify-center text-[10px] font-bold text-white uppercase shadow-lg shadow-green-900/40">Bullish</div>
+                    <div class="w-1 h-12 bg-slate-500 mx-auto"></div>
+                    <div class="mt-4 text-xs space-y-1">
+                        <div class="flex justify-between"><span>High</span> <span class="text-white">Top Wick</span></div>
+                        <div class="flex justify-between"><span>Close</span> <span class="text-green-400">Top Body</span></div>
+                        <div class="flex justify-between"><span>Open</span> <span class="text-green-400">Bottom Body</span></div>
+                        <div class="flex justify-between"><span>Low</span> <span class="text-white">Bottom Wick</span></div>
+                    </div>
+                </div>
+                <div class="card p-6 rounded-2xl border-red-500/20">
+                    <div class="w-1 h-12 bg-slate-500 mx-auto"></div>
+                    <div class="w-10 h-20 candle-red rounded-sm mx-auto flex items-center justify-center text-[10px] font-bold text-white uppercase shadow-lg shadow-red-900/40">Bearish</div>
+                    <div class="w-1 h-8 bg-slate-500 mx-auto"></div>
+                    <div class="mt-4 text-xs space-y-1">
+                        <div class="flex justify-between"><span>High</span> <span class="text-white">Top Wick</span></div>
+                        <div class="flex justify-between"><span>Open</span> <span class="text-red-400">Top Body</span></div>
+                        <div class="flex justify-between"><span>Close</span> <span class="text-red-400">Bottom Body</span></div>
+                        <div class="flex justify-between"><span>Low</span> <span class="text-white">Bottom Wick</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chart Example -->
+            <div class="card p-6 rounded-2xl border-slate-700">
+                <h3 class="text-lg font-bold mb-4 flex items-center">
+                    <span class="mr-2">📊</span> Example: Hourly (1H) Time Interval
+                </h3>
+                <div class="chart-grid h-48 w-full border border-slate-700 relative flex items-end justify-around px-4 pb-8 overflow-hidden rounded-lg">
+                    <div class="flex flex-col items-center relative h-[60%]"><div class="w-[1px] h-16 bg-slate-500 absolute -top-4"></div><div class="w-6 h-10 candle-green rounded-sm z-10"></div><span class="absolute -bottom-6 text-[10px] text-slate-500">1:00 PM</span></div>
+                    <div class="flex flex-col items-center relative h-[75%]"><div class="w-[1px] h-20 bg-slate-500 absolute -top-6"></div><div class="w-6 h-14 candle-green rounded-sm z-10"></div><span class="absolute -bottom-6 text-[10px] text-slate-500">2:00 PM</span></div>
+                    <div class="flex flex-col items-center relative h-[65%]"><div class="w-[1px] h-14 bg-slate-500 absolute -top-2"></div><div class="w-6 h-6 candle-red rounded-sm z-10"></div><span class="absolute -bottom-6 text-[10px] text-slate-500">3:00 PM</span></div>
+                    <div class="flex flex-col items-center relative h-[85%]"><div class="w-[1px] h-18 bg-slate-500 absolute -top-4"></div><div class="w-6 h-16 candle-green rounded-sm z-10"></div><span class="absolute -bottom-6 text-[10px] text-slate-500">4:00 PM</span></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Navigating Market Volatility -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold mb-6 flex items-center">
+                <span class="mr-2">🌊</span> Navigating Market Volatility
+            </h2>
+            <div class="card p-8 rounded-2xl border-orange-500/20">
+                <p class="text-slate-300 leading-relaxed mb-6">
+                    It is crucial to understand that the cryptocurrency market is significantly more volatile than traditional markets like stocks or real estate. Prices can swing by 10%, 20%, or even more in a single day. This is not necessarily a sign of failure, but rather a characteristic of a maturing asset class.
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                    <div class="space-y-4">
+                        <h4 class="text-blue-400 font-bold uppercase tracking-wider text-sm">Factors Driving Volatility:</h4>
+                        <ul class="text-sm text-slate-400 space-y-2">
+                            <li>• <strong class="text-white">Speculation & Hype:</strong> Social media trends and news cycles often lead to rapid buying or selling.</li>
+                            <li>• <strong class="text-white">Liquidity:</strong> Smaller tokens may have lower liquidity, causing small trades to move the price significantly.</li>
+                            <li>• <strong class="text-white">Global Events:</strong> Regulatory updates, geopolitical shifts, and macroeconomic data (like inflation reports) impact prices instantly.</li>
+                        </ul>
+                    </div>
+                    <div class="p-6 bg-slate-800/40 rounded-xl border border-slate-700">
+                        <h4 class="text-orange-400 font-bold mb-2">The Golden Rule of Safety</h4>
+                        <p class="text-sm text-slate-300 italic leading-relaxed">
+                            "Never overextend yourself by investing more than you are willing to lose."
+                        </p>
+                        <p class="text-xs text-slate-500 mt-4">
+                            In this space, you are your own bank. <strong>Your money, your responsibility.</strong> Approach every trade with a plan (whether long or short term) including an exit strategy.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Wallets vs Exchanges -->
+        <section id="wallets" class="mb-12">
+            <h2 class="text-2xl font-bold mb-6 flex items-center">
+                <span class="mr-2">🔐</span> Wallets, Exchanges & Storage
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                <div class="card p-6 rounded-xl">
+                    <h3 class="text-lg font-bold text-blue-400 mb-3">Crypto Exchanges</h3>
+                    <p class="text-sm text-slate-300 leading-relaxed mb-4">Exchanges act as the bridge between traditional finance and the crypto world.</p>
+                    <div class="space-y-3 mb-4">
+                        <div class="p-3 bg-slate-800/40 rounded border border-slate-700">
+                            <h4 class="text-xs font-bold text-white uppercase mb-1">On-Ramps</h4>
+                            <p class="text-xs text-slate-400">Converting Fiat (USD, EUR) into crypto by linking your bank account.</p>
+                        </div>
+                        <div class="p-3 bg-slate-800/40 rounded border border-slate-700">
+                            <h4 class="text-xs font-bold text-white uppercase mb-1">Off-Ramps</h4>
+                            <p class="text-xs text-slate-400">Selling crypto for fiat and withdrawing it back to your traditional bank account.</p>
+                        </div>
+                    </div>
+                    <div class="bg-blue-900/20 p-3 rounded text-xs text-slate-400 border border-blue-900/30">
+                        <strong>🪪 KYC Verification:</strong> Regulated exchanges require Know Your Customer checks (submitting ID) to allow on/off ramping.
+                    </div>
+                </div>
+                <div class="card p-6 rounded-xl">
+                    <h3 class="text-lg font-bold text-blue-400 mb-3">Crypto Wallets</h3>
+                    <p class="text-sm text-slate-300 leading-relaxed mb-4">A wallet stores your Private Keys—the digital password required to move your funds on the blockchain.</p>
+                    
+                    <div class="bg-slate-800/50 p-3 rounded text-xs text-slate-400 border border-slate-700 mb-4">
+                        <strong class="text-yellow-500">The Golden Rule:</strong> Not your keys, not your crypto. If you don't control the private key, you don't truly own the asset.
+                    </div>
+
+                    <!-- Private Keys Section -->
+                    <div class="p-4 bg-red-900/10 border-l-4 border-red-500 rounded-r-lg">
+                        <h4 class="text-white font-bold mb-2 flex items-center">
+                            <span class="mr-2">🔑</span> Private Keys: Your Digital Signature
+                        </h4>
+                        <p class="text-xs text-slate-300 leading-relaxed">
+                            Think of your Private Key as the secret PIN to your digital safe. <strong>Never share this with anyone.</strong> If a person or website asks for your "Seed Phrase" or "Private Key," they are trying to steal your funds. Unlike a bank, there is no "forgot password" button in crypto. If you lose your keys or give them away, your money is gone forever. 
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="card p-8 rounded-2xl border-blue-500/10">
+                <h3 class="text-xl font-bold mb-6 text-center">Hot Storage vs. Cold Storage</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <h4 class="text-orange-400 font-semibold mb-2 flex items-center">🔥 Hot Wallets</h4>
+                        <p class="text-sm text-slate-400">Connected to the internet. Great for frequent trading, but higher risk of hacking.</p>
+                    </div>
+                    <div>
+                        <h4 class="text-blue-400 font-semibold mb-2 flex items-center">❄️ Cold Storage</h4>
+                        <p class="text-sm text-slate-400">Offline devices (hardware wallets). The safest way to store long-term HODL positions.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Compliance & The IRS -->
+        <section id="compliance" class="mb-12">
+            <h2 class="text-2xl font-bold mb-6 flex items-center">
+                <span class="mr-2">⚖️</span> Compliance & The IRS: Staying Safe
+            </h2>
+            <div class="card p-8 rounded-2xl border-red-500/10">
+                <p class="text-slate-300 leading-relaxed mb-6">
+                    Understanding your tax obligations is a critical part of being a crypto investor. In the eyes of the IRS, cryptocurrency is treated as property, meaning <strong>realized gains are taxed just as with any income</strong>. Crypto is no exception to the law.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="p-5 bg-slate-900/40 rounded-lg border border-slate-700">
+                        <h4 class="text-white font-bold mb-2">1099 Tax Forms</h4>
+                        <p class="text-sm text-slate-400">
+                            Regulated exchanges operating in the U.S. (like Uphold) are required to track your activity and will issue <strong>1099 forms</strong> for every fiscal year. These documents summarize your gains and losses for reporting to the IRS.
+                        </p>
+                    </div>
+                    <div class="p-5 bg-slate-900/40 rounded-lg border border-slate-700">
+                        <h4 class="text-white font-bold mb-2">Income & Realized Gains</h4>
+                        <p class="text-sm text-slate-400">
+                            Whether you sell for a profit or trade one crypto for another, a "taxable event" occurs. It is vital to keep accurate records or use crypto tax software to ensure you are meeting your annual filing requirements.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Uphold Section -->
+        <section id="uphold" class="card uphold-card rounded-2xl p-8 mb-6 text-center">
+            <div class="flex flex-col items-center">
+                <h2 class="text-2xl font-bold mb-4 uphold-green">Get started with Uphold</h2>
+                <p class="mb-6 text-slate-300 max-w-lg text-sm md:text-base">Start your journey with Uphold, a leading digital money platform that makes it easy to buy, hold, and trade assets like XRP, XLM, and HBAR.</p>
+                <a href="https://wallet.uphold.com/signup?referral=4d86f1e27f&campaign=uw_p_d_w_acq_raf&utm_source=raf&utm_medium=referafriend" 
+                   target="_blank" 
+                   class="uphold-bg uphold-btn text-white font-bold py-4 px-10 rounded-full transition-all duration-300 shadow-lg shadow-green-900/30 transform hover:scale-105">
+                    Sign Up for Uphold
+                </a>
+            </div>
+        </section>
+
+        <!-- Coinbase Section -->
+        <section class="card coinbase-card rounded-2xl p-8 mb-12 text-center">
+            <div class="flex flex-col items-center">
+                <h2 class="text-2xl font-bold mb-4 coinbase-blue">Get started with Coinbase</h2>
+                <p class="mb-6 text-slate-300 max-w-lg text-sm md:text-base">Join millions of people using Coinbase to buy, sell, and manage their cryptocurrency. It's one of the most trusted platforms in the world.</p>
+                <a href="https://coinbase.com/join/NVMFCJX?src=ios-link" 
+                   target="_blank" 
+                   class="coinbase-bg coinbase-btn text-white font-bold py-4 px-10 rounded-full transition-all duration-300 shadow-lg shadow-green-900/30 transform hover:scale-105">
+                    Sign Up for Coinbase
+                </a>
+            </div>
+        </section>
+
+        <!-- CoinMarketCap Section -->
+        <section class="card rounded-2xl p-8 mb-12">
+            <div class="flex flex-col md:flex-row items-center gap-8">
+                <div class="flex-1 text-center md:text-left">
+                    <h2 class="text-2xl font-bold mb-4 text-white">Your CoinMarketCap Account</h2>
+                    <p class="text-slate-300 mb-4 text-sm md:text-base">
+                        CoinMarketCap is your primary tool for tracking market supply, volume, and data. At <strong>no cost</strong>, you can track your personal portfolios, create custom watchlists to monitor your tokens, and more.
+                    </p>
+                    <a href="https://coinmarketcap.com/" target="_blank" class="text-blue-400 font-semibold hover:underline">Visit CoinMarketCap &rarr;</a>
+                </div>
+                <div class="w-20 h-20 bg-blue-500 rounded-full flex items-center justify-center text-3xl shadow-xl shadow-blue-500/20">📊</div>
+            </div>
+        </section>
+
+        <!-- Ripple Labs Section -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold mb-6 flex items-center">
+                <span class="mr-2">🌍</span> Ripple Labs: Transforming Global Payments
+            </h2>
+            <div class="card p-8 rounded-2xl border-blue-400/20">
+                <p class="text-slate-300 leading-relaxed mb-4">
+                    Ripple Labs is a technology company that provides enterprise-grade solutions for the global financial industry. Their primary goal is to create the "Internet of Value," allowing money to move as fast as information.
+                </p>
+                <div class="mb-6">
+                    <a href="https://ripple.com" target="_blank" class="text-blue-400 hover:underline font-semibold flex items-center">
+                        Visit Ripple.com &rarr;
+                    </a>
+                </div>
+                
+                <div class="bg-slate-900/40 p-6 rounded-xl mb-6 border border-slate-700">
+                    <h3 class="text-lg font-bold text-white mb-2 underline decoration-blue-500 underline-offset-4">The Trillion Dollar Opportunity</h3>
+                    <p class="text-sm text-slate-400 leading-relaxed">
+                        Trillions of dollars move through cross-border payment systems every single day. Ripple targets the friction in this outdated system, offering ways to settle payments instantly and at a fraction of the cost.
+                    </p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="p-5 bg-blue-900/10 rounded-lg border border-blue-900/30">
+                        <h4 class="text-blue-400 font-bold mb-2">XRP</h4>
+                        <p class="text-xs text-slate-400">The native digital asset of the XRP Ledger. It serves as a bridge currency for banks to swap currencies instantly.</p>
+                    </div>
+                    <div class="p-5 bg-green-900/10 rounded-lg border border-green-900/30">
+                        <h4 class="text-green-400 font-bold mb-2">RLUSD</h4>
+                        <p class="text-xs text-slate-400">Ripple’s regulated, 1-to-1 USD-backed stablecoin designed to bring liquidity and stability to the XRPL.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ISO 20022 Tokens -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold mb-4 flex items-center">
+                <span class="mr-2">💎</span> The Power of ISO 20022 Tokens
+            </h2>
+            <div class="mb-8 p-5 bg-blue-900/10 border border-blue-500/20 rounded-xl">
+                <p class="text-sm md:text-base text-slate-300 italic leading-relaxed">
+                    <strong class="text-blue-400">Utility Over Hype:</strong> Unlike "meme coins" that rely solely on internet trends, ISO 20022 tokens are built for real-world financial utility.
+                </p>
+            </div>
+            <p class="text-slate-400 text-sm mb-6 leading-relaxed">
+                Below are a few major token assets that follow ISO 20022 compliance. There several others emerging in this space as well, but these are some of the standouts.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="card p-6 rounded-xl flex flex-col items-center text-center border-blue-500/20">
+                    <a href="https://coinmarketcap.com/currencies/xrp/" target="_blank" class="token-link text-2xl font-bold mb-2 text-white block">XRP</a>
+                    <p class="text-sm text-slate-400">Bridge asset for global banking liquidity.</p>
+                </div>
+                <div class="card p-6 rounded-xl flex flex-col items-center text-center">
+                    <a href="https://coinmarketcap.com/currencies/stellar/" target="_blank" class="token-link text-2xl font-bold mb-2 text-white block">XLM</a>
+                    <p class="text-sm text-slate-400">Focused on low-cost international transfers.</p>
+                </div>
+                <div class="card p-6 rounded-xl flex flex-col items-center text-center">
+                    <a href="https://coinmarketcap.com/currencies/hedera/" target="_blank" class="token-link text-2xl font-bold mb-2 text-white block">HBAR</a>
+                    <p class="text-sm text-slate-400">Enterprise-grade efficiency for institutional adoption.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Clarity Act Section -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold mb-6 flex items-center">
+                <span class="mr-2">⚖️</span> The Clarity Act: Why It Matters
+            </h2>
+            <div class="card p-8 rounded-2xl border-blue-500/10">
+                <div class="text-slate-300 leading-relaxed mb-4">
+                    The Digital Asset Market Clarity Act (Clarity Act) represents a turning point for the U.S. crypto market. For years, XRP and other tokens were held back by regulatory uncertainty. 
+                    <div class="mt-4">
+                        <a href="https://www.congress.gov/search?q=%7B%22source%22%3A%22legislation%22%2C%22search%22%3A%22Digital+Asset+Market+Clarity+Act%22%7D" target="_blank" class="text-blue-400 hover:underline inline-flex items-center font-semibold">
+                            Find the official legislation on Congress.gov &rarr;
+                        </a>
+                    </div>
+                </div>
+                <div class="space-y-4">
+                    <div class="p-4 bg-blue-900/10 rounded-lg border border-blue-900/30">
+                        <p class="text-sm text-slate-300">
+                            <strong>Key Impact:</strong> The act formally classifies tokens like <strong>XRP</strong> as <span class="text-blue-400 font-bold">digital commodities</span> rather than securities. This removes the legal barriers that prevented major banks and institutions from fully adopting Ripple's technology.
+                        </p>
+                    </div>
+                    <p class="text-sm text-slate-400">
+                        With this act, XRP is positioned on the same legal footing as Bitcoin, opening the floodgates for Institutional ETFs and mass integration into global payment rails.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Influencers Section -->
+        <section id="influencers" class="mb-12">
+            <h2 class="text-2xl font-bold mb-6 flex items-center">
+                <span class="mr-2">📚</span> Noteworthy Influencers
+            </h2>
+            <p class="text-slate-300 mb-6 leading-relaxed text-sm md:text-base">
+                Staying informed is critical in the rapidly evolving world of digital assets. I strongly encourage you to follow notable crypto influencers on YouTube to stay up-to-date with the latest news on XRP, the ISO 20022 ecosystem, and the broader market. Here are a few to check out:
+            </p>
+            <div class="space-y-6">
+                <!-- Kamilah Stevenson -->
+                <div class="video-card p-6 rounded-2xl border border-slate-700">
+                    <div class="flex flex-col md:flex-row gap-8 items-center">
+                        <div class="flex-shrink-0 w-full md:w-24 flex items-center justify-center">
+                            <svg class="w-12 h-12" viewBox="0 0 24 24" fill="#ff0000"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-bold text-white mb-1 text-center md:text-left">Kamilah Stevenson</h3>
+                            <p class="text-slate-400 text-sm mb-3 text-center md:text-left">Expert structural breakdowns of why XRP is the bridge asset for nations.</p>
+                            <div class="text-center md:text-left flex flex-col space-y-2">
+                                <a href="https://www.youtube.com/watch?v=ywQEoYPzhlQ" target="_blank" class="text-blue-400 hover:text-blue-300 font-medium">Watch: XRP Built for What's Coming ↗</a>
+                                <a href="https://youtube.com/@drkamilahstevenson?si=JhR95AxEtdb5E1N-" target="_blank" class="text-blue-400 hover:text-blue-300 font-medium">Visit: Kamilah Stevenson ↗</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Austin Hilton -->
+                <div class="video-card p-6 rounded-2xl border border-slate-700">
+                    <div class="flex flex-col md:flex-row gap-8 items-center">
+                        <div class="flex-shrink-0 w-full md:w-24 flex items-center justify-center">
+                            <svg class="w-12 h-12" viewBox="0 0 24 24" fill="#ff0000"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-bold text-white mb-1 text-center md:text-left">Austin Hilton</h3>
+                            <p class="text-slate-400 text-sm mb-3 text-center md:text-left">Simplifying crypto investing with daily news coverage and deep dives into market sentiment.</p>
+                            <div class="text-center md:text-left">
+                                <a href="https://youtube.com/@austinhilton" target="_blank" class="text-blue-400 hover:text-blue-300 font-medium">Visit: Austin Hilton ↗</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- CryptoWendyO -->
+                <div class="video-card p-6 rounded-2xl border border-slate-700">
+                    <div class="flex flex-col md:flex-row gap-8 items-center">
+                        <div class="flex-shrink-0 w-full md:w-24 flex items-center justify-center">
+                            <svg class="w-12 h-12" viewBox="0 0 24 24" fill="#ff0000"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-bold text-white mb-1 text-center md:text-left">CryptoWendyO</h3>
+                            <p class="text-slate-400 text-sm mb-3 text-center md:text-left">One of the top voices in crypto focusing on daily market trends and trading strategies.</p>
+                            <div class="text-center md:text-left">
+                                <a href="https://www.youtube.com/c/CryptoWendyO" target="_blank" class="text-blue-400 hover:text-blue-300 font-medium">Visit: The O Show ↗</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Rip Bullwinkle -->
+                <div class="video-card p-6 rounded-2xl border border-slate-700">
+                    <div class="flex flex-col md:flex-row gap-8 items-center">
+                        <div class="flex-shrink-0 w-full md:w-24 flex items-center justify-center">
+                            <svg class="w-12 h-12" viewBox="0 0 24 24" fill="#ff0000"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-bold text-white mb-1 text-center md:text-left">Rip Bullwinkle</h3>
+                            <p class="text-slate-400 text-sm mb-3 text-center md:text-left">Community-driven insights focusing on the XRP Ledger and the future of digital payments.</p>
+                            <div class="text-center md:text-left">
+                                <a href="https://youtube.com/@ripbullwinkle" target="_blank" class="text-blue-400 hover:text-blue-300 font-medium">Visit: Rip Bullwinkle ↗</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="text-center py-12 border-t border-slate-800">
+            <p class="text-slate-300 text-sm mb-2">Welcome to And That's On Crypto. Remember to always do your due diligence before investing.</p>
+            <p class="text-xs text-slate-600 italic">Not Financial Advice.</p>
+        </footer>
+    </div>
+
+    <!-- Mobile Back to Top Button -->
+    <button id="backToTop" class="bg-blue-500 text-white p-3 rounded-full shadow-lg hover:bg-blue-600 transition-all duration-300">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path></svg>
+    </button>
+
+    <script>
+        // Smooth scroll visibility logic
+        const btt = document.getElementById('backToTop');
+        window.onscroll = function() {
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                btt.style.display = "block";
+            } else {
+                btt.style.display = "none";
+            }
+        };
+        btt.onclick = function() {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        };
+    </script>
+</body>
+</html>
