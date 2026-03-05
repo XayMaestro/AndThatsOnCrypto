@@ -4,7 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="/favicon.ico">
-    <title>Welcome to Crypto</title>
+    <title>Welcome to Crypto | And Thats On Crypto</title>
+    <meta name="description" content="A beginner's guide to utility-driven cryptocurrency, ISO 20022 tokens, and the future of global payments.">
+    <link rel="canonical" href="https://andthatsoncrypto.com/" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://andthatsoncrypto.com/">
+    <meta property="og:title" content="Welcome to Crypto | And Thats On Crypto">
+    <meta property="og:description" content="The foundational guide for understanding XRP, Ripple, and the shift to ISO 20022 compliant assets.">
+
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
@@ -23,6 +32,9 @@
             background: linear-gradient(90deg, #38bdf8, #818cf8);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            /* Ensures descenders like 'y' and 'p' aren't clipped */
+            padding-bottom: 0.15em;
+            display: inline-block;
         }
         .candle-green { background-color: #22c55e; }
         .candle-red { background-color: #ef4444; }
@@ -65,6 +77,13 @@
         .uphold-bg { background-color: #49cc68; }
         .uphold-btn:hover { background-color: #3eb859; }
         .uphold-card { border-color: rgba(73, 204, 104, 0.3); }
+        
+        /* Coinbase Branding */
+        .coinbase-blue { color: #0052FF; }
+        .coinbase-bg { background-color: #0052FF; }
+        .coinbase-btn:hover { background-color: #0045d9; }
+        .coinbase-card { border-color: rgba(0, 82, 255, 0.3); }
+
         .chart-grid {
             background-image: linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
                               linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
@@ -275,8 +294,19 @@
                 <div class="card p-6 rounded-xl">
                     <h3 class="text-lg font-bold text-blue-400 mb-3">Crypto Wallets</h3>
                     <p class="text-sm text-slate-300 leading-relaxed mb-4">A wallet stores your Private Keys—the digital password required to move your funds on the blockchain.</p>
-                    <div class="bg-slate-800/50 p-3 rounded text-xs text-slate-400 border border-slate-700">
-                        <strong>The Golden Rule:</strong> Not your keys, not your crypto. If you don't control the private key, you don't truly own the asset.
+                    
+                    <div class="bg-slate-800/50 p-3 rounded text-xs text-slate-400 border border-slate-700 mb-4">
+                        <strong class="text-yellow-500">The Golden Rule:</strong> Not your keys, not your crypto. If you don't control the private key, you don't truly own the asset.
+                    </div>
+
+                    <!-- Private Keys Section -->
+                    <div class="p-4 bg-red-900/10 border-l-4 border-red-500 rounded-r-lg">
+                        <h4 class="text-white font-bold mb-2 flex items-center">
+                            <span class="mr-2">🔑</span> Private Keys: Your Digital Signature
+                        </h4>
+                        <p class="text-xs text-slate-300 leading-relaxed">
+                            Think of your Private Key as the secret PIN to your digital safe. <strong>Never share this with anyone.</strong> If a person or website asks for your "Seed Phrase" or "Private Key," they are trying to steal your funds. Unlike a bank, there is no "forgot password" button in crypto. If you lose your keys or give them away, your money is gone forever. 
+                        </p>
                     </div>
                 </div>
             </div>
@@ -322,7 +352,7 @@
         </section>
 
         <!-- Uphold Section -->
-        <section class="card uphold-card rounded-2xl p-8 mb-12 text-center">
+        <section class="card uphold-card rounded-2xl p-8 mb-6 text-center">
             <div class="flex flex-col items-center">
                 <h2 class="text-2xl font-bold mb-4 uphold-green">Get started with Uphold</h2>
                 <p class="mb-6 text-slate-300 max-w-lg text-sm md:text-base">Start your journey with Uphold, a leading digital money platform that makes it easy to buy, hold, and trade assets like XRP, XLM, and HBAR.</p>
@@ -330,6 +360,19 @@
                    target="_blank" 
                    class="uphold-bg uphold-btn text-white font-bold py-4 px-10 rounded-full transition-all duration-300 shadow-lg shadow-green-900/30 transform hover:scale-105">
                     Sign Up for Uphold
+                </a>
+            </div>
+        </section>
+
+        <!-- Coinbase Section -->
+        <section class="card coinbase-card rounded-2xl p-8 mb-12 text-center">
+            <div class="flex flex-col items-center">
+                <h2 class="text-2xl font-bold mb-4 coinbase-blue">Get started with Coinbase</h2>
+                <p class="mb-6 text-slate-300 max-w-lg text-sm md:text-base">Join millions of people using Coinbase to buy, sell, and manage their cryptocurrency. It's one of the most trusted platforms in the world.</p>
+                <a href="https://coinbase.com/join/NVMFCJX?src=ios-link" 
+                   target="_blank" 
+                   class="coinbase-bg coinbase-btn text-white font-bold py-4 px-10 rounded-full transition-all duration-300 shadow-lg shadow-green-900/30 transform hover:scale-105">
+                    Sign Up for Coinbase
                 </a>
             </div>
         </section>
@@ -444,7 +487,7 @@
                 <span class="mr-2">📚</span> Noteworthy Influencers
             </h2>
             <p class="text-slate-300 mb-6 leading-relaxed text-sm md:text-base">
-                Staying informed is critical in the rapidly evolving world of digital assets. I strongly encourage you to follow notable crypto influencers on YouTube to stay up-to-date with the latest news on XRP, the ISO 20022 ecosystem, and the broader market.
+                Staying informed is critical in the rapidly evolving world of digital assets. I strongly encourage you to follow notable crypto influencers on YouTube to stay up-to-date with the latest news on XRP, the ISO 20022 ecosystem, and the broader market. Here are a few to check out:
             </p>
             <div class="space-y-6">
                 <!-- Kamilah Stevenson -->
@@ -513,7 +556,7 @@
 
         <!-- Footer -->
         <footer class="text-center py-12 border-t border-slate-800">
-            <p class="text-slate-300 text-sm mb-2">Welcome to Crypto. Remember to always do your due diligence before investing.</p>
+            <p class="text-slate-300 text-sm mb-2">Welcome to And Thats On Crypto. Remember to always do your due diligence before investing.</p>
             <p class="text-xs text-slate-600 italic">Not Financial Advice.</p>
         </footer>
     </div>
@@ -539,5 +582,3 @@
     </script>
 </body>
 </html>
-
-
